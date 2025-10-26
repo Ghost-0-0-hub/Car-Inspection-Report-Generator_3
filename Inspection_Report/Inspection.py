@@ -10,66 +10,6 @@ st.set_page_config(
     layout="wide"
 )
 st.title("🚘 CAROBAR Inspection Form")
-
-# --- LIGHT THEME COLORS ---
-THEME = {
-    "primaryColor": "#2E86C1",
-    "backgroundColor": "#f0f4f8",
-    "secondaryBackgroundColor": "#ffffff",
-    "textColor": "#333333",
-    "font": "sans serif",
-    "inputBackground": "#ffffff",
-    "inputText": "#333333",
-    "expanderHeader": "#e0e0e0"
-}
-
-# --- APPLY LIGHT THEME VIA CSS ---
-st.markdown(f"""
-<style>
-/* Main page and text */
-.reportview-container, .main {{
-    background-color: {THEME['backgroundColor']};
-    color: {THEME['textColor']};
-    font-family: {THEME['font']};
-}}
-
-/* Sidebar background */
-.css-1d391kg {{
-    background-color: {THEME['secondaryBackgroundColor']};
-    color: {THEME['textColor']};
-}}
-
-/* Buttons */
-.stButton>button {{
-    background-color: {THEME['primaryColor']};
-    color: white;
-    font-weight: bold;
-}}
-
-/* Expander header */
-.stExpanderHeader {{
-    background-color: {THEME['expanderHeader']};
-    color: {THEME['textColor']};
-    font-weight: bold;
-}}
-
-/* Inputs, text areas, and selectboxes */
-.stTextInput>div>div>input,
-.stTextArea>div>textarea,
-.stSelectbox>div>div>div>div,
-.stNumberInput>div>div>input {{
-    background-color: {THEME['inputBackground']};
-    color: {THEME['inputText']};
-}}
-
-/* Radio buttons and checkboxes labels */
-.stRadio>div>div>label,
-.stCheckbox>div>label {{
-    color: {THEME['textColor']};
-}}
-</style>
-""", unsafe_allow_html=True)
-
 # --- FORM SECTIONS ---
 with st.expander("Basic Information", expanded=True):
     col1, col2, col3 = st.columns(3)
@@ -230,3 +170,4 @@ if st.button("Submit Inspection"):
     except Exception as e:
         st.error(f"❌ Unexpected error: {e}")
         st.code(traceback.format_exc())
+
